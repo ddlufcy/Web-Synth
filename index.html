@@ -15,12 +15,27 @@
     <button id="stop">
         Stop
     </button>
-    <input type="range" id="volume" data-action="volume" class="volumeControl" min="0" max="2" value="1" step="0.01"
-        list="gain-vals" />
-    <datalist id="gain-vals">
-        <option value="0" label="min"></option>
-        <option value="2" label="max"></option>
-    </datalist>
+    <label for="Gain">
+        <input type="range" id="volume" data-action="volume" class="volumeControl" min="0" max="3" value="0" step="0.01"
+            list="gain-vals" />
+    </label>
+    <label for='freq'>Freq</label>
+    <input id='freq' type='range' value='110' min='5' max='6000' step='10' oninput='freqInp(value)' />
+    <output for='freq' id='freqVal'>110</output>
+    </div>
+    <select id="waveFormSelect">
+        <option value="sine">sine</option>
+        <option value="square">square</option>
+        <option value="sawtooth">sawtooth</option>
+        <option value="triangle">triangle</option>
+    </select>
+
+
+    <div>
+        <canvas id='scope' width=400 height=200></canvas>
+        <br>
+        <canvas id='spectrum' width=400 height=200></canvas>
+    </div>
     <script src="app.js"></script>
 </body>
 
